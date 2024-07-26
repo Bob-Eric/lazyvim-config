@@ -2,7 +2,9 @@
   "extras": [
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.coding.yanky",
+    "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.lang.toml",
+    "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.vscode"
   ],
   "news": {
