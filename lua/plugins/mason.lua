@@ -10,7 +10,7 @@ return {
       ensure_installed = {
         "stylua",
         "shfmt",
-        "cland",
+        "clangd",
         "ruff",
         "rust-analyzer",
         "codelldb",
