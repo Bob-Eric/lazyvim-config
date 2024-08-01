@@ -55,4 +55,17 @@ if vim.g.vscode then
 
     map("n", "zR", "<Cmd>lua require('vscode').call('editor.unfoldAll')<CR>")
     map("x", "zR", "<Cmd>lua require('vscode').call('editor.unfoldAll')<CR>")
+
+    -- -- Editor height width increase decrease
+    -- map("n", "<C-Up>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewHeight')<CR>")
+    -- map("x", "<C-Up>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewHeight')<CR>")
+
+    -- map("n", "<C-Down>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewHeight')<CR>")
+    -- map("x", "<C-Down>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewHeight')<CR>")
+
+    -- map("n", "<C-Right>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewWidth')<CR>")
+    -- map("x", "<C-Right>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewWidth')<CR>")
+
+    -- map("n", "<C-Left>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewWidth')<CR>")
+    -- map("x", "<C-Left>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewWidth')<CR>")
 end
