@@ -2,70 +2,86 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 if vim.g.vscode then
-    local map = LazyVim.safe_keymap_set
-    -- Deal with vscode buffers
-    -- Go to next buffer
-    map("n", "L", "<Cmd>lua require('vscode').call('workbench.action.nextEditorInGroup')<CR>", { desc = "Next Buffer" })
-    map("x", "L", "<Cmd>lua require('vscode').call('workbench.action.nextEditorInGroup')<CR>", { desc = "Next Buffer" })
-    map("n", "]b", "<Cmd>lua require('vscode').call('workbench.action.nextEditorInGroup')<CR>", { desc = "Next Buffer" })
-    map("x", "]b", "<Cmd>lua require('vscode').call('workbench.action.nextEditorInGroup')<CR>", { desc = "Next Buffer" })
+  local map = LazyVim.safe_keymap_set
+  -- Deal with vscode buffers
+  -- Go to next buffer
+  map("n", "L", "<Cmd>lua require('vscode').call('workbench.action.nextEditorInGroup')<CR>", { desc = "Next Buffer" })
+  map("x", "L", "<Cmd>lua require('vscode').call('workbench.action.nextEditorInGroup')<CR>", { desc = "Next Buffer" })
+  map("n", "]b", "<Cmd>lua require('vscode').call('workbench.action.nextEditorInGroup')<CR>", { desc = "Next Buffer" })
+  map("x", "]b", "<Cmd>lua require('vscode').call('workbench.action.nextEditorInGroup')<CR>", { desc = "Next Buffer" })
 
-    -- Go to previous buffer
-    map("n", "H", "<Cmd>lua require('vscode').call('workbench.action.previousEditorInGroup')<CR>",
-        { desc = "Previous Buffer" })
-    map("x", "H", "<Cmd>lua require('vscode').call('workbench.action.previousEditorInGroup')<CR>",
-        { desc = "Previous Buffer" })
-    map("n", "[b", "<Cmd>lua require('vscode').call('workbench.action.previousEditorInGroup')<CR>",
-        { desc = "Previous Buffer" })
-    map("x", "[b", "<Cmd>lua require('vscode').call('workbench.action.previousEditorInGroup')<CR>",
-        { desc = "Previous Buffer" })
+  -- Go to previous buffer
+  map(
+    "n",
+    "H",
+    "<Cmd>lua require('vscode').call('workbench.action.previousEditorInGroup')<CR>",
+    { desc = "Previous Buffer" }
+  )
+  map(
+    "x",
+    "H",
+    "<Cmd>lua require('vscode').call('workbench.action.previousEditorInGroup')<CR>",
+    { desc = "Previous Buffer" }
+  )
+  map(
+    "n",
+    "[b",
+    "<Cmd>lua require('vscode').call('workbench.action.previousEditorInGroup')<CR>",
+    { desc = "Previous Buffer" }
+  )
+  map(
+    "x",
+    "[b",
+    "<Cmd>lua require('vscode').call('workbench.action.previousEditorInGroup')<CR>",
+    { desc = "Previous Buffer" }
+  )
 
-    -- Delete buffer
-    map("n", "<leader>bd", "<Cmd>lua require('vscode').call('workbench.action.closeActiveEditor')<CR>")
-    map("x", "<leader>bd", "<Cmd>lua require('vscode').call('workbench.action.closeActiveEditor')<CR>")
+  -- Delete buffer
+  map("n", "<leader>bd", "<Cmd>lua require('vscode').call('workbench.action.closeActiveEditor')<CR>")
+  map("x", "<leader>bd", "<Cmd>lua require('vscode').call('workbench.action.closeActiveEditor')<CR>")
 
-    map("n", "<leader>bo", "<Cmd>lua require('vscode').call('workbench.action.closeOtherEditors')<CR>")
-    map("x", "<leader>bo", "<Cmd>lua require('vscode').call('workbench.action.closeOtherEditors')<CR>")
+  map("n", "<leader>bo", "<Cmd>lua require('vscode').call('workbench.action.closeOtherEditors')<CR>")
+  map("x", "<leader>bo", "<Cmd>lua require('vscode').call('workbench.action.closeOtherEditors')<CR>")
 
-    -- Toggle sidebar
-    map("n", "<leader>e", "<Cmd>lua require('vscode').call('workbench.action.toggleSidebarVisibility')<CR>")
-    map("x", "<leader>e", "<Cmd>lua require('vscode').call('workbench.action.toggleSidebarVisibility')<CR>")
+  -- Toggle sidebar
+  map("n", "<leader>e", "<Cmd>lua require('vscode').call('workbench.action.toggleSidebarVisibility')<CR>")
+  map("x", "<leader>e", "<Cmd>lua require('vscode').call('workbench.action.toggleSidebarVisibility')<CR>")
 
-    -- Lazygit
-    map("n", "<leader>gg", "<Cmd>lua require('vscode').call('lazygit.openLazygit')<CR>")
-    map("x", "<leader>gg", "<Cmd>lua require('vscode').call('lazygit.openLazygit')<CR>")
+  -- Lazygit
+  map("n", "<leader>gg", "<Cmd>lua require('vscode').call('lazygit.openLazygit')<CR>")
+  map("x", "<leader>gg", "<Cmd>lua require('vscode').call('lazygit.openLazygit')<CR>")
 
-    -- Clipboard
-    -- map("n", "<leader>y", "<Cmd>lua require('vscode').call('multiclip.list')<CR>")
-    -- map("x", "<leader>y", "<Cmd>lua require('vscode').call('multiclip.list')<CR>")
+  -- Clipboard
+  -- map("n", "<leader>y", "<Cmd>lua require('vscode').call('multiclip.list')<CR>")
+  -- map("x", "<leader>y", "<Cmd>lua require('vscode').call('multiclip.list')<CR>")
 
-    -- Copilot chat
-    map("n", "<leader>aa", "<Cmd>lua require('vscode').call('workbench.panel.chat.view.copilot.focus')<CR>")
-    map("x", "<leader>aa", "<Cmd>lua require('vscode').call('workbench.panel.chat.view.copilot.focus')<CR>")
+  -- Copilot chat
+  map("n", "<leader>aa", "<Cmd>lua require('vscode').call('workbench.panel.chat.view.copilot.focus')<CR>")
+  map("x", "<leader>aa", "<Cmd>lua require('vscode').call('workbench.panel.chat.view.copilot.focus')<CR>")
 
-    -- Collapse
-    map("n", "zc", "<Cmd>lua require('vscode').call('editor.fold')<CR>")
-    map("x", "zc", "<Cmd>lua require('vscode').call('editor.fold')<CR>")
+  -- Collapse
+  map("n", "zc", "<Cmd>lua require('vscode').call('editor.fold')<CR>")
+  map("x", "zc", "<Cmd>lua require('vscode').call('editor.fold')<CR>")
 
-    map("n", "zo", "<Cmd>lua require('vscode').call('editor.unfold')<CR>")
-    map("x", "zo", "<Cmd>lua require('vscode').call('editor.unfold')<CR>")
+  map("n", "zo", "<Cmd>lua require('vscode').call('editor.unfold')<CR>")
+  map("x", "zo", "<Cmd>lua require('vscode').call('editor.unfold')<CR>")
 
-    map("n", "zM", "<Cmd>lua require('vscode').call('editor.foldAll')<CR>")
-    map("x", "zM", "<Cmd>lua require('vscode').call('editor.foldAll')<CR>")
+  map("n", "zM", "<Cmd>lua require('vscode').call('editor.foldAll')<CR>")
+  map("x", "zM", "<Cmd>lua require('vscode').call('editor.foldAll')<CR>")
 
-    map("n", "zR", "<Cmd>lua require('vscode').call('editor.unfoldAll')<CR>")
-    map("x", "zR", "<Cmd>lua require('vscode').call('editor.unfoldAll')<CR>")
+  map("n", "zR", "<Cmd>lua require('vscode').call('editor.unfoldAll')<CR>")
+  map("x", "zR", "<Cmd>lua require('vscode').call('editor.unfoldAll')<CR>")
 
-    -- -- Editor height width increase decrease
-    -- map("n", "<C-Up>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewHeight')<CR>")
-    -- map("x", "<C-Up>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewHeight')<CR>")
+  -- -- Editor height width increase decrease
+  -- map("n", "<C-Up>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewHeight')<CR>")
+  -- map("x", "<C-Up>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewHeight')<CR>")
 
-    -- map("n", "<C-Down>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewHeight')<CR>")
-    -- map("x", "<C-Down>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewHeight')<CR>")
+  -- map("n", "<C-Down>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewHeight')<CR>")
+  -- map("x", "<C-Down>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewHeight')<CR>")
 
-    -- map("n", "<C-Right>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewWidth')<CR>")
-    -- map("x", "<C-Right>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewWidth')<CR>")
+  -- map("n", "<C-Right>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewWidth')<CR>")
+  -- map("x", "<C-Right>", "<Cmd>lua require('vscode').call('workbench.action.increaseViewWidth')<CR>")
 
-    -- map("n", "<C-Left>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewWidth')<CR>")
-    -- map("x", "<C-Left>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewWidth')<CR>")
+  -- map("n", "<C-Left>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewWidth')<CR>")
+  -- map("x", "<C-Left>", "<Cmd>lua require('vscode').call('workbench.action.decreaseViewWidth')<CR>")
 end
