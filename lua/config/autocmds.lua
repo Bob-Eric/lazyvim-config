@@ -3,6 +3,5 @@
 -- Add any additional autocmds here
 --
 
--- disable spell
-vim.o.spell = false
-vim.opt_local.spell = false
+-- disable spell and wrap for certain filetypes
+vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
